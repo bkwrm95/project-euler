@@ -1,15 +1,24 @@
 package mhoover.euler
 
 fun main(args: Array<String>) {
-	val arg = if (args.size > 1) args[1].toLong() else 0;
-	
-	when(args[0]) {
-		"1" -> Problem1(1000L);
-		"2" -> Problem2(4_000_000L);
-		"3" -> Problem3(600851475143L);
-		"4" -> Problem4(3);
-		"5" -> Problem5(20);
-		
+
+    execProblem("8");
+
+}
+
+fun execProblem(choice: String, arg: Long = 0) {
+    println("Problem $choice: ");
+	when(choice) {
+		"1" -> problem1(1000L);
+		"2" -> problem2(4_000_000L);
+		"3" -> problem3(600_851_475_143L);
+		"4" -> problem4(3);
+        "5" -> problem5(20);
+        "6" -> problem6(100);
+        "7" -> problem7(10_001);
+        "8" -> problem8(13);
+        "9" -> problem9();
+
 		"primes" -> for (item in Primes.list(arg)) println("$item ");
 		"primeFactors" -> for ((k, v) in PrimeFactors(arg).primeFactors) println("$k: $v");
 	}
