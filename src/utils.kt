@@ -6,7 +6,6 @@ import kotlin.math.*;
  * Fibonacci
  * A class that generates the Fibonacci sequence
  */
-
 class Fibonacci {
 	var curr:Long = 1;
 	var prev:Long = 0;
@@ -24,7 +23,6 @@ class Fibonacci {
  *  Primes
  *  A Singleton that generates and contains a list of the first n prime numbers
  */
-
 object Primes {
 	var primes = longArrayOf(2);
 	var maxFound:Long = 2;
@@ -52,7 +50,7 @@ object Primes {
 
 /**
  * PrimeFactorMap
- * A map of a number's prime factors and the number of times they occur
+ * A map of a number's prime factors and the number of times they occur <factor, ocurrences>
  */
 typealias PrimeFactorMap = MutableMap<Long, Long>;
 fun PrimeFactorMap.increment(key: Long, value: Long) {
@@ -68,7 +66,6 @@ fun PrimeFactorMap.expand(map: PrimeFactorMap) {
  *  PrimeFactors
  *  A class for finding a number's prime factorization
  */
-
 class PrimeFactors {
 	
 	var number: Long;
@@ -89,11 +86,11 @@ class PrimeFactors {
 /**
  * Expansion functions to add mathemtical functionality to Longs
  */
-fun Long.isFactor(num: Long): Boolean {
-	return this % num == 0L;
+fun Long.isFactor(divisor: Long): Boolean {
+	return this % divisor == 0L;
 }
 fun Long.pow(exp: Long): Long {
-	return (this.toDouble().pow(num.toDouble())).toLong();
+	return (this.toDouble().pow(exp.toDouble())).toLong();
 }
 
 fun Long.isPalindrome(): Boolean {
